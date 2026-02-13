@@ -58,9 +58,11 @@ export default function RootLayout({
 
       <body className="font-sans antialiased">
         <Providers>
-    <GoogleAnalytics />
-    {children}
-  </Providers>
+          <GoogleAnalytics />
+          <Suspense fallback={null}>
+            {children}
+          </Suspense>
+        </Providers>
 
         <Analytics />
       </body>
